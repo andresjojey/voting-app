@@ -1,5 +1,4 @@
 # voting-app
-just voting app
 ---
 ## voting-server
 ## +
