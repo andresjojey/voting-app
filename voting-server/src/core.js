@@ -39,13 +39,15 @@ function getWinners(vote) {
   return winners;
 }
 
-export function vote(state, entry) {
-  var path = ['vote', 'tally', entry],
+export function vote(voteState, entry) {
+  const path = ['tally', entry],
     startValue = 0;
 
-  return state.updateIn(
+  return voteState.updateIn(
     path,
     startValue,
     tally => tally + 1
   );
 }
+
+export const INITIAL_STATE = Map();
