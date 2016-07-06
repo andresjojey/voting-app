@@ -1,3 +1,7 @@
 .idea/
+
 voting-server/.idea/
 voting-server/node_modules/
+
+voting-client/.idea/
+voting-client/node_modules/
