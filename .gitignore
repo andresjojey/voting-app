@@ -5,3 +5,4 @@ voting-server/node_modules/
 
 voting-client/.idea/
 voting-client/node_modules/
+voting-client/dist/bundle.js
