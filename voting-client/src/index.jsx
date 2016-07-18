@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, hashHistory} from 'react-router';
-import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from './reducer';
+import configureStore from './configureStore';
 import routes from './routes';
 
-const store = createStore(reducer);
+const store = configureStore();
 
 store.dispatch({
   type: 'SET_STATE',
