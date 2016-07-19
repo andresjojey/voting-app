@@ -1,10 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, hashHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import io from 'socket.io-client';
 import configureStore from './configureStore';
-import routes from './routes';
+import appRouter from './app-router';
 import {setState} from './action-creators';
 import remoteActionMiddleware from './remote-action-middleware';
 
@@ -22,8 +21,6 @@ socket.on('state', state =>
 );
 
 render(
-  <Provider store={store}>
-    <Router history={hashHistory}>{routes}</Router>
-  </Provider>,
+  <Provider store={store}>{appRouter}</Provider>,
   document.getElementById('app')
 );
