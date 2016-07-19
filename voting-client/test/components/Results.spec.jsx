@@ -37,7 +37,9 @@ describe('Results', () => {
       <Results pair={pair} tally={tally} next={next} />
     );
 
-    Simulate.click(findDOMNode(component.refs.next));
+    const button = scryRenderedDOMComponentsWithClass(component, 'next')[0];
+
+    Simulate.click(button);
 
     expect(nextWasCalled).to.equal(true);
   });
