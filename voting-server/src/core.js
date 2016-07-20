@@ -43,6 +43,10 @@ export function vote(voteState, entry) {
   const path = ['tally', entry],
     startValue = 0;
 
+  if (!voteState.get('tally')) {
+    voteState = voteState.set('tally', Map())
+  }
+
   return voteState.updateIn(
     path,
     startValue,
