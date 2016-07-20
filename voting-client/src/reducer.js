@@ -6,6 +6,8 @@ export default function(state = Map(), action) {
       return resetVote(setState(state, action.state));
     case 'VOTE':
       return vote(state, action.entry);
+    case 'NEXT':
+      return next(state);
   }
 
   return state;
@@ -34,4 +36,8 @@ function resetVote(state) {
   } else {
     return state;
   }
+}
+
+function next(state) {
+  return state;
 }
