@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link, browserHistory} from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 export default class Tally extends Component {
@@ -6,6 +7,10 @@ export default class Tally extends Component {
     super(props);
     this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
+
+  static contextTypes = {
+    router: React.PropTypes.object
+  };
 
   getPair() {
     return this.props.pair || [];
@@ -20,6 +25,11 @@ export default class Tally extends Component {
     }
 
     return count;
+  }
+
+  goNext() {
+    this.props.next();
+    this.context.router.push('/');
   }
 
   render() {
@@ -40,10 +50,11 @@ export default class Tally extends Component {
         <div className="management">
           <button ref="next"
             className="next"
-            onClick={this.props.next}>
+            onClick={::this.goNext}>
             Next
           </button>
         </div>
+        <Link to="/">back</Link>
       </div>
     );
   }
