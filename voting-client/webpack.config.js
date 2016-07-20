@@ -13,6 +13,7 @@ module.exports = {
       loader: 'react-hot!babel'
     }]
   },
+  devtool: 'source-map',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
