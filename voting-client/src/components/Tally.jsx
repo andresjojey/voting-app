@@ -29,7 +29,9 @@ export default class Tally extends Component {
 
   goNext() {
     this.props.next();
-    this.context.router.push('/');
+    if (this.context.router) {
+      this.context.router.push('/');
+    }
   }
 
   render() {
