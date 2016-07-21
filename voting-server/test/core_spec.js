@@ -25,7 +25,8 @@ describe('app logic', () => {
 
       expect(nextState).to.equal(Map({
         vote: Map({
-          pair: List.of('Trainspotting', '28 Days Later')
+          pair: List.of('Trainspotting', '28 Days Later'),
+          id: 1
         }),
         entries: List.of('Sunshine')
       }));
@@ -46,7 +47,8 @@ describe('app logic', () => {
 
       expect(nextState).to.equal(Map({
         vote: Map({
-          pair: List.of('Sunshine', 'Millions')
+          pair: List.of('Sunshine', 'Millions'),
+          id: 1
         }),
         entries: List.of('127 Hours', 'Trainspotting')
       }));
@@ -67,7 +69,8 @@ describe('app logic', () => {
 
       expect(nextState).to.equal(Map({
         vote: Map({
-          pair: List.of('Sunshine', 'Millions')
+          pair: List.of('Sunshine', 'Millions'),
+          id: 1
         }),
         entries: List.of('127 Hours', 'Trainspotting', '28 Days Later')
       }));
