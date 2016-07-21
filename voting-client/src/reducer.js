@@ -21,18 +21,21 @@ function vote(state, entry) {
   const currentPair = state.getIn(['vote', 'pair']);
 
   if (currentPair && currentPair.includes(entry)) {
-    return state.set('hasVoted', entry);
+    return state.set('voted', Map({
+      id: state.getIn(['vote', 'id']),
+      entry
+    }));
   } else {
     return state;
   }
 }
 
 function resetVote(state) {
-  const hasVoted = state.get('hasVoted');
-  const currentPair = state.getIn(['vote', 'pair'], List());
+  const votedId = state.getIn(['voted', 'id']);
+  const currentId = state.getIn(['vote', 'id']);
 
-  if (hasVoted && !currentPair.includes(hasVoted)) {
-    return state.remove('hasVoted');
+  if (currentId !== votedId) {
+    return state.remove('voted');
   } else {
     return state;
   }
